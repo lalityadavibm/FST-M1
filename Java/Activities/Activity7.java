@@ -1,64 +1,49 @@
 package Java02;
 
-public interface Activity7 {
-    public int gears = 0;
-    
-    public int speed = 0;
 
 
-public interface BicycleOperations {
-    public void applyBrake1(int decrement);
-
-    public void speedUp1(int increment);
-}
-
-public class MountainBike implements Activity7, BicycleOperations {
+public class Activity7 implements BicycleOperations {
+    // Instance variables for current speed and gear of the bike
     int currentSpeed;
-    int current;
-	private int currentGear;
-    
-    public MountainBike(int gears, int speed) {
+    private int currentGear;
+
+    // Constructor to initialize gear and speed
+    public Activity7(int gears, int speed) {
         this.currentGear = gears;
         this.currentSpeed = speed;
     }
-    
+
+    // Implementing the applyBrake method from BicycleOperations interface
     @Override
     public void applyBrake(int decrement) {
-        currentSpeed -= decrement;
+        currentSpeed -= decrement; // Reducing the current speed by decrement
         System.out.println("Brake applied. Speed reduced by " + decrement + " km/h. Current speed: " + currentSpeed + " km/h");
     }
 
-    // Implement the speedUp method from BicycleOperations
+    // Implementing the speedUp method from BicycleOperations interface
     @Override
     public void speedUp(int increment) {
-        currentSpeed += increment;
+        currentSpeed += increment; // Increasing the current speed by increment
         System.out.println("Speed increased by " + increment + " km/h. Current speed: " + currentSpeed + " km/h");
     }
-    
+
+    // Method to display the properties of the bike
     public void displayProperties() {
         System.out.println("Mountain Bike - Gears: " + currentGear + ", Max Speed: " + currentSpeed + " km/h");
     }
 
-public class Activity7 {
-	
-    	    public static void main(String[] args) {
-    	        MountainBike bike = new MountainBike(5, 30);
+    // Main method to test the functionality
+    public static void main(String[] args) {
+        // Create a Activity7 object with 5 gears and initial speed of 30 km/h
+        Activity7 bike = new Activity7(5, 30);
+        
+        // Display the properties of the bike
+        bike.displayProperties();
 
-    	        bike.displayProperties();
-
-    	        bike.speedUp1(10);
-
-    	        bike.applyBrake1(5);
-
-    	        bike.speedUp1(15);
-
-    	        bike.applyBrake1(10);
-    	    }
-    	}
-
-
-	
-}
-
-
+        // Perform some operations on the bike
+        bike.speedUp(10); // Increase speed by 10
+        bike.applyBrake(5); // Apply brake, reducing speed by 5
+        bike.speedUp(15); // Increase speed by 15
+        bike.applyBrake(10); // Apply brake, reducing speed by 10
+    }
 }
