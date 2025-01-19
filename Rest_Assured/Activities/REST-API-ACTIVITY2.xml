@@ -31,6 +31,10 @@
         <con:request name="Request 1" id="960a3dbf-5dbe-4d63-af16-528c9a11d9dc" mediaType="application/json">
           <con:settings/>
           <con:endpoint>https://petstore.swagger.io</con:endpoint>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
           <con:parameters>
             <con:entry key="status" value="sold."/>
           </con:parameters>
