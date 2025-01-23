@@ -6,6 +6,7 @@ import java.time.Duration;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.cucumber.java.en.And;
@@ -23,7 +24,9 @@ public class AlertTestSteps {
 	 
 	@Given("User is on the page")
 	public void openPage() {
-		// Open browser
+
+
+		driver=new FirefoxDriver();
 		driver.get("https://training-support.net/webelements/alerts");
 	}
  
