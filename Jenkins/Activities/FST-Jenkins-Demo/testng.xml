@@ -1,0 +1,7 @@
+<suite name="Suite" parallel="methods">
+    <test name="Tests">
+        <classes>
+            <class name="com.training.pom.tests.AlertsTest" />
+        </classes>
+    </test>
+</suite>
